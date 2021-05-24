@@ -1,0 +1,107 @@
+// Stat card styles
+
+.stat-card {
+    background-color: $color-brand;
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    @include breakpoint-up(medium) {
+        text-align: left;
+        display: flex;
+    }
+
+    h1 {
+        color: white;
+        font-size: 22px;
+        padding-bottom: 15px;
+        letter-spacing: .4px;
+        line-height: 1.25em;
+        @include breakpoint-up(medium) {
+            font-size: 32px;
+            padding-bottom: 25px;
+            max-width: 340px;
+        }
+        span {
+            color: $color-brand--alt;
+        }
+    }
+
+    p {
+        font-size: $font-sml;
+        line-height: 1.65em;
+        letter-spacing: .4px;
+        font-weight: 200;
+        padding-bottom: 25px;
+
+        @include breakpoint-up(medium) {
+            padding-bottom: 70px;
+            max-width: 340px;
+        }
+    }
+}
+
+.stat-card__contain {
+    padding: 45px 30px;
+    @include breakpoint-up(medium) {
+        width: 50%;
+        order:1;
+        padding: 65px 55px 50px;
+    }
+}
+
+.stat-card__img {
+    position: relative;
+    @include breakpoint-up(medium) {
+        width: 50%;
+        order: 2;
+    }
+    &:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $color-brand--alt;
+        opacity: .33;
+    }
+
+    picture {
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.stat-card__stats {
+    list-style-type: none;
+    li {
+        padding-bottom: 20px;
+        @include breakpoint-up(medium) {
+            width: 33.33333%;
+            float: left;
+        }
+
+        &:last-child {
+            padding-bottom:0;
+        }
+        span {
+            font-size: 22px;
+            font-weight: 700;
+            display: block;
+            padding-bottom: 5px;
+        }
+        font-size: 12px;
+        letter-spacing: .4px;
+        font-weight: 100;
+        text-transform: uppercase;
+
+    }
+}
