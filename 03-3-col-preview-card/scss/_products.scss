@@ -1,0 +1,38 @@
+.product-grid {
+    border-radius: 7px;
+    overflow: hidden;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint-up(medium) {
+        display: flex;
+    }
+}
+
+.product {
+    padding: 50px;
+    color: $color-white;
+
+    @include breakpoint-up(medium) {
+        width: 33.333333%;
+    }
+
+    .icon {
+        margin-bottom: 32px;
+    }
+
+    h2 {
+        margin-bottom: 32px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 20px;
+        padding-bottom: 0;
+        margin-bottom: 26px;
+        @include breakpoint-up(medium) {
+            padding-bottom: 60px;
+        }
+    }
+}
