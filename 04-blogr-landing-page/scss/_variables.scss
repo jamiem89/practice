@@ -1,0 +1,18 @@
+// Colours
+$color-red: hsl(356, 100%, 66%);
+$color-red--light: hsl(355, 100%, 74%);
+$color-blue: hsl(208, 49%, 24%);
+
+// Colours - neutrals
+$color-white: #ffffff;
+$color-gray-blue: hsl(240, 2%, 79%);
+$color-gray-dark: hsl(207, 13%, 34%);
+$color-black-blue: hsl(240, 10%, 16%);
+
+// Colours - gradients
+$gradient-red: linear-gradient(90deg, rgba(255,143,112,1) 0%, rgba(255,61,84,1) 100%);
+$gradient-blue: linear-gradient(0deg, rgba(44,45,63,1) 0%, rgba(63,65,100,1) 100%);
+
+// Font-sizes
+$font-primary: 'Overpass', sans-serif;
+$font-secondary: 'Ubuntu', sans-serif;

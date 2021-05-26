@@ -1,0 +1,27 @@
+// Button styles
+
+.btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 100px;
+    padding: 13px;
+    background-color: $color-white;
+    color: $color-red;
+    text-decoration: none;
+    min-width: 120px;
+    text-align: center;
+}
+
+    .btn--secondary {
+        background-color: transparent;
+        border: 1px solid $color-white;
+        color: $color-white;
+    }
+
+.text-link {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,106 @@
+.img-text {
+    padding-top: 90px;
+    @include breakpoint-up(medium) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        > div {
+            padding: 0 20px;
+        }
+    }
+
+    @include breakpoint-up(large) {
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        margin-bottom: 40px;
+        @include breakpoint-up(medium) {
+            margin-bottom: 80px;
+        }
+    }
+}
+
+.img-text__title {
+    margin-bottom: 35px;
+    text-align: center;
+    @include breakpoint-up(medium) {
+        margin-bottom: 110px;
+        flex-basis: 100%;
+        flex-shrink: 0;
+        order: 0;
+    }
+}
+
+.img-text__img {
+    margin-bottom: 35px;
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include breakpoint-up(medium) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        flex-basis: 40%;
+        flex-shrink: 0;
+        order: 2;
+    }
+    @include breakpoint-up(large) {
+        margin-top: -150px;
+        flex-basis: 50%;
+        img {
+            max-width: 150%;
+        }
+    }
+}
+
+.img-text__text {
+    width: calc(100% - 40px);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        max-width: 100%;
+        flex-basis: 60%;
+        flex-shrink: 0;
+        order: 1;
+        text-align: left;
+    }
+
+    @include breakpoint-up(large) {
+        flex-basis: 50%;
+    }
+}
+
+.img-text--reverse {
+
+    .img-text__text {
+        @include breakpoint-up(medium) {
+            order: 2;
+        }
+    }
+
+    .img-text__img {
+        @include breakpoint-up(medium) {
+            order: 1;
+        }
+
+        @include breakpoint-up(large) {
+            img {
+                margin-left: -350px;
+            }
+        }
+    }
+
+}

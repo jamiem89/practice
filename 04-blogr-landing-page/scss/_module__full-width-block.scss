@@ -1,0 +1,42 @@
+.full-width-block {
+    background: $color-blue;
+    color: $color-white;
+    border-radius: 0 85px 0 85px;
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 30px
+    }
+}
+
+.full-width-block__img {
+    height: 300px;
+    width: 285px;
+    position: absolute;
+    top: -150px;
+    left: calc(50% - 142px);
+    @include breakpoint-up(medium) {
+        height: 490px;
+        width: 470px;
+        top: -45px;
+        left: 0;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.full-width-block__content {
+    margin-top: 240px;
+    position: relative;
+    padding: 180px 20px 100px;
+    text-align: center;
+    @include breakpoint-up(medium) {
+        max-width: 1120px;
+        margin: 60px auto 200px;
+        padding-left: 560px;
+        text-align: left;
+        padding: 120px 20px 100px 560px;
+    }
+}
