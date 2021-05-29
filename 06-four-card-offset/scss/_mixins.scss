@@ -1,0 +1,16 @@
+// Viewport size maps
+
+// 480px 640px, 1024px, 1400px
+$breakpoints-up: (
+    "small": "30em",
+    "medium": "40em",
+    "large": "64em",
+    "xlarge": "87.5em"
+);
+
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($breakpoints-up, $size )) {
+        @content;
+    }
+}
