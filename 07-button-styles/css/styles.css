@@ -1,0 +1,189 @@
+/* Base styles */
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #ffffff;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px;
+}
+
+@media (min-width: 64em) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ea4c89;
+}
+
+.btn-container__info {
+  -ms-flex-preferred-size: 33.3333%;
+      flex-basis: 33.3333%;
+}
+
+.btn-container__button {
+  -ms-flex-preferred-size: 66.6666%;
+      flex-basis: 66.6666%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px;
+  background-color: #ea4c89;
+  color: #ffffff;
+  border-radius: 12px;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #da3a77;
+}
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: background .4s ease-out;
+  transition: background .4s ease-out;
+}
+
+span.ripple {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: ripple .4s ease-in;
+          animation: ripple .4s ease-in;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@-webkit-keyframes ripple {
+  to {
+    -webkit-transform: scale(4);
+            transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  to {
+    -webkit-transform: scale(4);
+            transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.btn-progress {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ea4c89;
+}
+
+.btn-progress:after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 7px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #ea4c89;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.btn-progress.active {
+  background-color: #ffffff;
+  color: #ea4c89;
+}
+
+.btn-progress.active:after {
+  -webkit-animation: progress 1.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+          animation: progress 1.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+@-webkit-keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

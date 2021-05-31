@@ -1,0 +1,74 @@
+.btn {
+    display: inline-block;
+    padding: 14px;
+    background-color: $color-pink;
+    color: $color-white;
+    border-radius: 12px;
+    transition: background-color .3s ease-in-out;
+    &:hover {
+        background-color: $color-pink--tint;
+    }
+}
+
+// RIPPLE BUTTON
+
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+    transition: background .4s ease-out;
+}
+
+  span.ripple {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    width:100px;
+    height:100px;
+    transform: translateX(-50%) translateY(-50%);
+    transform: scale(0);
+    animation: ripple .4s ease-in;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+//   Progress button
+
+.btn-progress {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $color-pink;
+    &:after {
+        content:'';
+        display: block;
+        width: 0%;
+        height: 7px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $color-pink;
+        transition: all .2s ease-in-out;
+    }
+
+    &.active {
+        background-color: $color-white;
+        color: $color-pink;
+        &:after {
+            animation: progress 1.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        }
+    }
+}
+
+@keyframes progress {
+    0% {
+    width: 0%;
+    }
+    100% {
+    width: 100%;
+    }
+}
