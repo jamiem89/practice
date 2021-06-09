@@ -1,0 +1,23 @@
+// Neumorphism elements
+
+.up {
+    background-color: $color-theme;
+    border-radius: $border-radius;
+    border: 1px solid rgba(255,255,255,.3);
+    box-shadow:  3px 3px 7px #dba6af,
+             -3px -3px 7px #ffdce9;
+}
+
+// Icons
+
+.icon__book {
+    background-image: url(../img/icon__book.svg);
+}
+
+.icon__code {
+    background-image: url(../img/icon__code.svg);
+}
+
+.icon__person {
+    background-image: url(../img/icon__person.svg);
+}

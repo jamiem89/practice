@@ -1,0 +1,37 @@
+.btn {
+    display: block;
+    margin-bottom: 15px;
+    padding: 20px 60px 20px 20px;
+    text-decoration: none;
+    color: $color-text;
+    position: relative;
+    transition: all .3s ease-in-out;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &:after {
+        content:'';
+        position: absolute;
+        right: 20px;
+        top: calc(50% - 7px);
+        width: 20px;
+        height: 14px;
+        background: url(../img/icon__arrow.svg);
+        transition: all .3s ease-in-out;
+    }
+
+    &.up:hover {
+        padding-left: 18px;
+        box-shadow:
+        1px 1px 0px #dba6af,
+        -1px -1px 0px #ffdce9;
+    }
+
+    &:hover {
+        &:after {
+            right: 10px;
+        }
+    }
+}

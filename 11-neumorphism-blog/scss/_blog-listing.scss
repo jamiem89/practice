@@ -1,0 +1,88 @@
+.page-intro {
+    padding: 30px 0;
+    text-align: center;
+    @include breakpoint-up(medium) {
+        padding: 60px 0;
+    }
+    @include breakpoint-up(large) {
+        padding: 120px 0;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 25px;
+        @include breakpoint-up(medium) {
+            font-size: 3.75em;
+            margin-bottom: 30px;
+        }
+        @include breakpoint-up(large) {
+            font-size: 4.5em;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.blog-post {
+    position: relative;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+
+    &:after {
+        content: '';
+        background-color: $color-theme--tint;
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 50px;
+        left: 50%;
+        bottom: -25px;
+
+        @include breakpoint-up(medium) {
+            height: calc(100% - 75px);
+            left: 25px;
+            bottom: -25px;
+        }
+
+    }
+    @include breakpoint-up(medium) {
+        text-align: left;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        padding-left: 80px;
+    }
+
+    &:last-of-type:after{
+        display: none;
+    }
+}
+
+.post__category {
+    text-indent: -99999px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include breakpoint-up(medium) {
+        margin: 0;
+        position: absolute;
+        top: 25px;
+        left: 0;
+    }
+}
+
+.post__meta {
+    display: inline-block;
+    font-size: .625em;
+    font-weight: $bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.post__title {
+    display: block;
+    margin-bottom: 15px;
+}
+
