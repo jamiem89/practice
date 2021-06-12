@@ -9,19 +9,35 @@ const form = document.querySelector('form');
 // Reusable fetch function
 function fetchData(url) {
     return fetch(url)
-        .then(checkStatus);
-        .then(res => res.json());
+        .then(checkStatus)
+        .then(res => res.json())
         .catch(error => console.log(`Error recieving breed list`, error));
 };
 
+// Promise all consolidates all promises into one.
+// It returns an array of responses in the order they were passed in.
+Promise.all([
+    fetchData('https://dog.ceo/api/breeds/list'),
+    fetchData('https://dog.ceo/api/breeds/image/random')
+])
+    .then(data => {
+        const breedList = data[0].message;
+        const randomImage = data[1].message;
+        generateOptions(breedList);
+        generateImage(randomImage);
+    });
+
+// Seperate responses are no longer required as
+// promise.all is handling this for us.
+
 // Fetch the breed list data
-fetchData('https://dog.ceo/api/breeds/list')
-.then(data => generateOptions(data))
+// fetchData('https://dog.ceo/api/breeds/list')
+// .then(data => generateOptions(data))
 
 
-// Fetch the image data
-fetchData('https://dog.ceo/api/breeds/image/random')
-.then(data => generateImage(data.message))
+// // Fetch the image data
+// fetchData('https://dog.ceo/api/breeds/image/random')
+// .then(data => generateImage(data.message))
 
 
 
@@ -32,13 +48,13 @@ fetchData('https://dog.ceo/api/breeds/image/random')
 function checkStatus(response) {
     if(response.ok) {
         return Promise.resolve(response);
-    } eles {
+    } else {
         return Promise.reject(new Error(response.statusText));
     }
 }
 
 function generateOptions(data){
-    const options = data.message.map(item => `
+    const options = data.map(item => `
         <option value="${item}">${item}</option>
     `).join('');
     select.innerHTML = options;
@@ -71,6 +87,7 @@ function fetchBreedImage() {
 
 select.addEventListener('change', fetchBreedImage);
 card.addEventListener('click', fetchBreedImage);
+form.addEventListener('submit',postData);
 
 
 
@@ -78,3 +95,22 @@ card.addEventListener('click', fetchBreedImage);
 //  POST DATA
 // ------------------------------------------
 
+function postData(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
+
+    fetch('https://jsonplaceholder.typicode.com/comments', {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: name,
+            comment: comment
+        })
+    })
+        .then(checkStatus)
+        .then(res => res.json())
+        .then(data => console.log(data));
+}
