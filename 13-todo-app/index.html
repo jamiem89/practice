@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TODO</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body class="scheme-light">
+        <header class="wrapper site-header">
+            <div class="container">
+                <h1 class="site-logo">TODO</h1>
+                <button class="scheme-select scheme-select--dark"></button>
+            </div>
+        </header>
+        <main class="wrapper">
+            <div class="container">
+                <div class="list__item add-item">
+                    <span class="list-item__check"></span>
+                    <input type="text" placeholder="Create a new todo...">
+                </div>
+                <ul class="list">
+                    <li class="list__item" data-completed="false"><span class="list-item__check"></span>Add your first item<span class="list-item__remove"></span></li>
+
+                </ul>
+                <div class="list-footer">
+                    <div class="list-footer__remaining">
+                        <p><span id="listRemaining">5</span> items left</p>
+                    </div>
+                    <div class="list-footer__clear">
+                        <a>Clear completed</a>
+                    </div>
+                    <div class="list-footer__filters">
+                        <ul>
+                            <li class="active"><a href="#" data-filter="all">All</a></li>
+                            <li><a href="#" data-filter="active">Active</a></li>
+                            <li><a href="#" data-filter="completed">Completed</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="./script.js" async defer></script>
+    </body>
+</html>

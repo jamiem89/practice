@@ -1,0 +1,56 @@
+// Custom property declarations
+
+:root {
+    // Brand colours
+    --color-blue: #3a7bfd;
+    --color-purple: #c058f3;
+
+    // Light theme colours
+    --color-v-light-gray: #fafafa;
+    --color-v-light-gray--blue: #e4e5f1;
+    --color-light-gray-blue: #d2d3db;
+    --color-dark-gray-blue: #9394a5;
+    --color-very-dark-gray-blue: #484b6a;
+    --color-lightest: #ffffff;
+
+    // Dark theme colours
+    --color-v-dark-blue: #161722;
+    --color-dark-desat-blue: #25273c;
+    --color-light-grayish-blue: #cacde8;
+    --color-light-gray-blue: #e4e5f1;
+    --color-dark-gray-blue: #777a92;
+    --color-v-dark-gray-blue: #4d5066;
+    --color-v-dark-gray-blue--alt: #393a4c;
+
+    // Spacing and utilities
+    --border-radius: 6px;
+    --element-spacing: 15px;
+    @include breakpoint-up(medium) {
+        --element-spacing: 25px;
+    }
+}
+
+.scheme-light {
+    --background-color: var(--color-v-light-gray);
+    --list-background: var(--color-lightest);
+    --text-color: var(--color-very-dark-gray-blue);
+    --text-color--inactive: var(--color-dark-gray-blue);
+    --text-color--active: var(--color-blue);
+    --border-color: var(--color-light-gray-blue);
+    --header-image: url(../img/bg-mobile-light.jpg);
+    @include breakpoint-up(medium) {
+        --header-image: url(../img/bg-desktop-light.jpg);
+    }
+}
+.scheme-dark {
+    --background-color: var(--color-v-dark-blue);
+    --list-background: var(--color-dark-desat-blue);
+    --text-color: var(--color-light-grayish-blue);
+    --text-color--inactive: var(--color-dark-gray-blue);
+    --text-color--active: var(--color-blue);
+    --border-color: var(--color-dark-gray-blue);
+    --header-image: url(../img/bg-mobile-dark.jpg);
+    @include breakpoint-up(medium) {
+        --header-image: url(../img/bg-desktop-dark.jpg);
+    }
+}
