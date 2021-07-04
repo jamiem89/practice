@@ -1,0 +1,150 @@
+/* Base styles */
+
+html {
+    font-size: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    position: relative;
+    font-size: 16px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    line-height: 1em;
+    background-color: lightgrey;
+
+    * {
+        font-size: 1em;
+    }
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 20px;
+
+    @include breakpoint-up(medium) {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "cardone cardtwo"
+        "cardthree cardfour"
+        "cardfive cardfive";
+        gap: 10px;
+    }
+
+    @include breakpoint-up(large) {
+        grid-template-areas:
+        "cardone cardone cardtwo cardthree"
+        "cardfour cardfive cardfive cardthree";
+        gap: 20px;
+        max-width: 1100px;
+        padding: 0;
+    }
+}
+
+.card {
+    border-radius: 7px;
+    padding: 22px 30px;
+
+    h3 {
+        font-size: 1em;
+        margin-bottom: 17px;
+        line-height: 1.375em;
+    }
+
+    p {
+        font-size: .8125em;
+        opacity: .7;
+    }
+}
+
+.user-info {
+    display: flex;
+    font-size: .625em;
+    margin-bottom: 20px;
+    h2 {
+        margin-bottom: 0;
+    }
+    h3 {
+        margin-bottom: 0;
+        opacity: .7;
+    }
+
+
+}
+
+.user-info__img {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 1px solid #9E78CF;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.card-one {
+    background-color: #733FC8;
+    color: #ffffff;
+    @include breakpoint-up(medium) {
+        grid-area: cardone;
+    }
+}
+
+.card-two {
+    background-color: #49556D;
+    color: #ffffff;
+    @include breakpoint-up(medium) {
+        grid-area: cardtwo;
+    }
+}
+
+.card-three {
+    background: #ffffff;
+    @include breakpoint-up(medium) {
+        grid-area: cardthree;
+    }
+}
+
+.card-four {
+    background: #ffffff;
+    @include breakpoint-up(medium) {
+        grid-area: cardfour;
+    }
+}
+
+.card-five {
+    background-color: #1B2330;
+    color: #ffffff;
+    @include breakpoint-up(medium) {
+        grid-area: cardfive;
+    }
+}
