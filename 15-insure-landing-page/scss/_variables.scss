@@ -1,0 +1,54 @@
+
+:root {
+    // Typefaces
+    --font-primary: 'DM Serif Display', serif;
+    --font-secondary: 'Karla', sans-serif;
+
+    // Type sizes
+    --body-font-size: 14px;
+    --body-line-height: 1.375;
+
+    @include breakpoint-up(large) {
+        --body-font-size: 16px;
+    }
+
+    --h1-font-size: 34px;
+    --h1-line-height: 0.875;
+    --h1-letter-spacing: .75px;
+    --h1-bottom-spacing: 25px;
+
+    @include breakpoint-up(medium) {
+        --h1-font-size: 48px;
+        --h1-bottom-spacing: 35px;
+    }
+
+    @include breakpoint-up(large) {
+        --h1-font-size: 68px;
+    }
+
+    --h2-font-size: 24px;
+    --h2-bottom-spacing: 20px;
+
+    --h3-font-size: 14px;
+    --h3-bottom-spacing: 20px;
+
+    @include breakpoint-up(medium) {
+        --h3-bottom-spacing: 30px;
+    }
+
+
+
+
+
+    // Colours
+    --color-brand: #2d2640;
+    --color-brand-alt: 	#95a9c6;
+
+    --color-darkest: #2b272f;
+    --color-mauve: #837d87;
+    --color-bg: #fafafa;
+    --color-lightest: #ffffff;
+
+    // Spacing
+    --global-padding: 20px;
+}

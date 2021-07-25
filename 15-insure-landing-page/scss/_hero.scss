@@ -1,0 +1,115 @@
+.hero {
+    &:before {
+        content:'';
+        position: absolute;
+        bottom: -200px;
+        right: 0;
+        display: block;
+        height: 320px;
+        width: 120px;
+        background-image: url(../img/bg-pattern-intro-right-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: contain;
+        z-index: 1
+    }
+    @include breakpoint-up(medium) {
+        display: flex;
+        padding-top: 100px;
+        margin-bottom: 150px;
+
+
+        > div {
+            flex-basis: calc(50% - 20px);
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &:after {
+            content:'';
+            position: absolute;
+            bottom: -350px;
+            display: block;
+            height: 500px;
+            width: 200px;
+            left: 0;
+            background-image: url(../img/bg-pattern-intro-left-desktop.svg);
+            background-repeat: no-repeat;
+            background-position: top left;
+            background-size: contain;
+            z-index: 1
+        }
+        &:before {
+            content:'';
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            height: 430px;
+            width: 520px;
+            background-image: url(../img/bg-pattern-intro-right-desktop.svg);
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: contain;
+            z-index: 1
+        }
+    }
+
+    @include breakpoint-up(large) {
+        margin-bottom: 300px;
+    }
+}
+
+.hero__img {
+    margin-left: calc(0px - var(--global-padding));
+    margin-right: calc(0px - var(--global-padding));
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @include breakpoint-up(medium) {
+        order: 2;
+        margin-bottom: -160px;
+    }
+}
+
+.hero__content {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+    background-image: url(../img/bg-pattern-intro-left-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top -3px left ;
+    background-size: 40% auto;
+    margin-left: -20px;
+    margin-right: -20px;
+    z-index:2;
+
+    @include breakpoint-up(medium) {
+        order: 1;
+        text-align: left;
+        padding: 0 0 120px;
+        margin-left: 0;
+        margin-right: 0;
+        background-image: none;
+    }
+}
+
+.hero__title {
+    @extend .title-line;
+    padding-top: 0;
+
+    &:after {
+        display: none;
+    }
+
+    @include breakpoint-up(medium) {
+        padding-top: 70px;
+        &:after {
+            display:block;
+            background-color: var(--color-lightest);
+        }
+    }
+}

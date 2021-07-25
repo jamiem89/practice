@@ -1,0 +1,36 @@
+.cta-banner {
+    background-image: url(../img/bg-pattern-how-we-work-mobile.svg);
+    background-size: auto 100%;
+    background-position: top right;
+    background-repeat: no-repeat;
+
+    @include breakpoint-up(medium) {
+        background-image: url(../img/bg-pattern-how-we-work-desktop.svg);
+    }
+}
+
+.cta-banner__container {
+    padding: 40px 70px;
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+        display: flex;
+        padding: 80px;
+        text-align: left;
+
+        div:first-child {
+            flex-basis: 65%;
+        }
+
+        div:last-child {
+            flex-basis: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .h1 {
+            margin-bottom: 0;
+        }
+    }
+}

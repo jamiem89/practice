@@ -1,0 +1,33 @@
+.btn {
+    display: inline-block;
+    border: 1px solid var(--color-darkest);
+    color: var(--color-darkest);
+    padding: 12px 18px;
+    text-decoration: none;
+    font-size: calc(var(--body-font-size) - 2px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    transition: all .25s ease-out;
+
+    &:hover {
+        color: var(--color-lightest);
+        background-color: var(--color-darkest);
+        cursor: pointer;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: var(--global-padding);
+    }
+}
+
+.btn--alt {
+    border-color: var(--color-lightest);
+    color: var(--color-lightest);
+
+    &:hover {
+        color: var(--color-darkest);
+        background-color: var(--color-lightest);
+    }
+}

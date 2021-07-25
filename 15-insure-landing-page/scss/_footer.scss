@@ -1,0 +1,106 @@
+.site-footer {
+    padding: 80px 0;
+    background-image: url(../img/bg-pattern-footer-mobile.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    @include breakpoint-up(small) {
+        background-image: url(../img/bg-pattern-footer-desktop.svg);
+        background-size: 33.3333% auto;
+    }
+}
+
+.site-footer__logo {
+    @extend .site-header__logo;
+    margin: 0 auto 25px;
+
+    @include breakpoint-up(small) {
+        margin: 0;
+    }
+}
+
+.site-footer__top {
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--color-mauve);
+    margin-bottom: 35px;
+
+    @include breakpoint-up(small) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.social-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+
+    li {
+
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+
+        a {
+            display: block;
+            width: 25px;
+            height: 25px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+}
+
+.icon-facebook {
+    background-image: url(../img/icon-facebook.svg);
+}
+
+.icon-twitter {
+    background-image: url(../img/icon-twitter.svg);
+}
+
+.icon-pinterest {
+    background-image: url(../img/icon-pinterest.svg);
+}
+
+.icon-instagram {
+    background-image: url(../img/icon-instagram.svg);
+}
+
+.site-footer__bottom {
+    text-align: center;
+
+    ul {
+        list-style-type: none;
+        margin-bottom: 30px;
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-brand);
+            text-transform: uppercase;
+            font-size: calc(var(--body-font-size) - 2px);
+            font-weight: 700;
+        }
+    }
+
+    @include breakpoint-up(small) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+        grid-gap: var(--global-padding);
+    }
+
+    @include breakpoint-up(medium) {
+        grid-template-columns: repeat(4, 1fr);
+        ul {
+            margin-bottom: 0;
+        }
+    }
+}
+
