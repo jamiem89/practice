@@ -341,8 +341,11 @@ p:not(:last-child) {
     font-size: 12px;
   }
   .site-header__menu-items a.btn {
-    color: var(--color-brand);
     border-color: var(--color-brand);
+    color: var(--color-brand);
+  }
+  .site-header__menu-items a.btn:hover {
+    color: var(--color-lightest);
   }
   .site-header__menu-items a:not(.btn) {
     color: var(--color-mauve);

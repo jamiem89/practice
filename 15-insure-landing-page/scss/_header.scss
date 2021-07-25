@@ -135,8 +135,12 @@
             font-size: 12px;
 
             &.btn {
-                color: var(--color-brand);
                 border-color: var(--color-brand);
+                color: var(--color-brand);
+
+                &:hover {
+                    color: var(--color-lightest);
+                }
             }
 
             &:not(.btn) {
