@@ -1,0 +1,215 @@
+:root {
+  --color-brand: #f96262;
+  --color-brand--tint: #ce9797;
+  --color-darkest: #413a3a;
+  --color-lightest:#FFF5F4;
+}
+
+/* Base styles */
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  position: relative;
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: lightgrey;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@media (min-width: 40em) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 600px;
+        grid-template-columns: 1fr 600px;
+        grid-template-areas: "header hero" "content hero";
+    min-height: 100vh;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  padding: 30px;
+  background: var(--color-lightest);
+}
+
+@media (min-width: 40em) {
+  header {
+    grid-area: header;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-left: 80px;
+  }
+}
+
+@media (min-width: 64em) {
+  header {
+    padding-left: 120px;
+  }
+}
+
+.site-logo {
+  text-indent: -99999px;
+  height: 21px;
+  width: 101px;
+  background-image: url(../img/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero .hero__desktop {
+  display: none;
+}
+
+@media (min-width: 40em) {
+  .hero {
+    grid-area: hero;
+    height: 100vh;
+  }
+  .hero .hero__desktop {
+    display: block;
+    max-height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: top left;
+       object-position: top left;
+  }
+  .hero .hero__mob {
+    display: none;
+  }
+}
+
+.main-content {
+  padding: 60px 30px;
+  text-align: center;
+  background: var(--color-lightest);
+}
+
+@media (min-width: 40em) {
+  .main-content {
+    grid-area: content;
+    text-align: left;
+    padding-left: 80px;
+  }
+  .main-content .main-content__inner {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 64em) {
+  .main-content {
+    padding-left: 120px;
+  }
+}
+
+.main-content h1 {
+  font-size: 42px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.125em;
+  color: var(--color-darkest);
+  margin-bottom: 25px;
+  letter-spacing: 6px;
+}
+
+.main-content h1 span {
+  font-weight: 300;
+  color: var(--color-brand--tint);
+}
+
+@media (min-width: 40em) {
+  .main-content h1 {
+    font-size: 68px;
+  }
+}
+
+.main-content p {
+  color: var(--color-brand--tint);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 40em) {
+  .main-content p {
+    font-size: 16px;
+  }
+}
+
+.main-content .custom-input {
+  position: relative;
+}
+
+.main-content .custom-input input[type="text"] {
+  background-color: transparent;
+  border: 1px solid var(--color-brand--tint);
+  font-size: 14px;
+  padding: 15px;
+  border-radius: 100px;
+  width: 100%;
+}
+
+.main-content .custom-input input[type="text"]::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--color-brand--tint);
+}
+
+.main-content .custom-input input[type="text"]::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--color-brand--tint);
+}
+
+.main-content .custom-input input[type="text"]:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--color-brand--tint);
+}
+
+.main-content .custom-input input[type="text"]:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--color-brand--tint);
+}
+
+.main-content .custom-input input[type="submit"] {
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  padding: 15px;
+  border-radius: 100px;
+  text-indent: -99999px;
+  background: #f8bfbf;
+  background: url(../img/icon-arrow.svg), linear-gradient(135deg, #f8bfbf 0%, #ee8c8c 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/*# sourceMappingURL=styles.css.map */
