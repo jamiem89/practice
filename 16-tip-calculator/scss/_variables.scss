@@ -1,0 +1,28 @@
+:root {
+    // Colors
+    --color-brand: #00494d;
+    --color-brand--tint: #5e7a7d;
+    --color-bg: #c5e4e7;
+    --color-form-bg: #F3F8FB;
+    --color-lightest: #ffffff;
+    --color-error: #CD7B6D;
+    --color-success: #5BA89E;
+
+    --dark-gray-cyan--alt: #7f9c9f;
+
+
+    // Typefaces
+    --font-primary: 'Space Mono', monospace;
+
+    // Type sizes
+    --form-label-text-size: 12px;
+    --input-text-size: 24px;
+    --text-size: 12px;
+
+    // Spacing and miscellaneous
+    --global-padding: 32px;
+    --grid-gap: 15px;
+    --border-radius: 4px;
+    --border-radius-lrg: 22px;
+
+}

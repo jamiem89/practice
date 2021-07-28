@@ -1,0 +1,53 @@
+label,
+legend {
+    display: block;
+    font-size: var(--form-label-text-size);
+    color: var(--color-brand--tint);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    background-color: var(--color-form-bg);
+    color: var(--color-brand);
+    font-size: var(--input-text-size);
+    padding: 10px 15px;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    border-radius: var(--border-radius);
+
+
+    &:not([type="button"]) {
+        text-align: right;
+    }
+
+    &[type="button"] {
+        text-align: center;
+    }
+
+    &::placeholder {
+        color: var(--color-brand--tint);
+    }
+
+}
+
+fieldset {
+    margin-bottom: 35px;
+}
+
+
+
+// Remove any default styling
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

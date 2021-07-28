@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tip Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+
+                <header>
+                    <div class="site-logo">
+                        <h1>TIPPER</h1>
+                    </div>
+                </header>
+
+                <form class="calc">
+                    <div class="calc-form">
+                        <fieldset class="calc__field">
+                            <label for="bill">Bill</label>
+                            <input type="number" name="bill" placeholder="0" class="calc__field--currency" id="billTotal">
+                        </fieldset>
+                        <fieldset class="calc__field calc__field-btns">
+
+                            <legend for="tip">Select tip %</legend>
+
+                            <div class="calc__field-btn">
+                                <label for="5%">5%</label>
+                                <input type="button" value="5">
+                            </div>
+
+                            <div class="calc__field-btn">
+                                <label for="10%">10%</label>
+                                <input type="button" value="10">
+                            </div>
+
+                            <div class="calc__field-btn">
+                                <label for="15%">15%</label>
+                                <input type="button" value="15">
+                            </div>
+
+                            <div class="calc__field-btn">
+                                <label for="25%">25%</label>
+                                <input type="button" value="25">
+                            </div>
+
+                            <div class="calc__field-btn">
+                                <label for="50%">50%</label>
+                                <input type="button" value="50">
+                            </div>
+
+                            <div class="calc__field-btn">
+                                <label for="Custom">Custom</label>
+                                <input type="text" placeholder="Custom" id="customTip">
+                            </div>
+
+                        </fieldset>
+                        <fieldset class="calc__field">
+                            <label for="people">Number of people</label>
+                            <input type="number" name="people" placeholder="0" value="0" min="1" class="calc__field--people" id="peopleTotal">
+                        </fieldset>
+
+                    </div>
+                    <div class="calc-results">
+                        <div class="calc-results__info">
+                            <h3>Tip amount<br><span>/ person</span></h3>
+                            <h4 id="tipPerPerson">$0.00</h4>
+                        </div>
+                        <div class="calc-results__info">
+                            <h3>Total<br><span>/ person</span></h3>
+                            <h4 id="totalPerPerson">$0.00</h4>
+                        </div>
+
+                        <div class="calc-results__reset">
+                            <label for="reset">Reset</label>
+                            <input type="button" value="Reset" id="resetButton">
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+
+        <script src="./script.js" async defer></script>
+    </body>
+</html>

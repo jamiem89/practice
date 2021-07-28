@@ -1,0 +1,299 @@
+:root {
+  --color-brand: #00494d;
+  --color-brand--tint: #5e7a7d;
+  --color-bg: #c5e4e7;
+  --color-form-bg: #F3F8FB;
+  --color-lightest: #ffffff;
+  --color-error: #CD7B6D;
+  --color-success: #5BA89E;
+  --dark-gray-cyan--alt: #7f9c9f;
+  --font-primary: 'Space Mono', monospace;
+  --form-label-text-size: 12px;
+  --input-text-size: 24px;
+  --text-size: 12px;
+  --global-padding: 32px;
+  --grid-gap: 15px;
+  --border-radius: 4px;
+  --border-radius-lrg: 22px;
+}
+
+/* Base styles */
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  position: relative;
+  font-size: 16px;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@media (min-width: 40em) {
+  .container {
+    padding: 0 var(--global-padding);
+  }
+}
+
+@media (min-width: 64em) {
+  .container {
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+label,
+legend {
+  display: block;
+  font-size: var(--form-label-text-size);
+  color: var(--color-brand--tint);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  background-color: var(--color-form-bg);
+  color: var(--color-brand);
+  font-size: var(--input-text-size);
+  padding: 10px 15px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  border-radius: var(--border-radius);
+}
+
+input:not([type="button"]) {
+  text-align: right;
+}
+
+input[type="button"] {
+  text-align: center;
+}
+
+input::-webkit-input-placeholder {
+  color: var(--color-brand--tint);
+}
+
+input:-ms-input-placeholder {
+  color: var(--color-brand--tint);
+}
+
+input::-ms-input-placeholder {
+  color: var(--color-brand--tint);
+}
+
+input::placeholder {
+  color: var(--color-brand--tint);
+}
+
+fieldset {
+  margin-bottom: 35px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+header {
+  padding: 50px 0;
+}
+
+.site-logo {
+  text-indent: -99999px;
+  height: 56px;
+  width: 88px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../img/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.calc {
+  background-color: var(--color-lightest);
+  border-radius: var(--border-radius-lrg) var(--border-radius-lrg) 0 0;
+  padding: var(--global-padding);
+}
+
+@media (min-width: 40em) {
+  .calc {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: calc(var(--grid-gap) * 2);
+    border-radius: var(--border-radius-lrg);
+  }
+}
+
+.calc__field-btns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--grid-gap);
+}
+
+@media (min-width: 40em) {
+  .calc__field-btns {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.calc__field-btns input[type="button"] {
+  background: var(--color-brand);
+  color: var(--color-lightest);
+}
+
+.calc__field-btns input[type="button"][data-active="active"] {
+  color: var(--color-brand);
+  background: var(--color-success);
+}
+
+.calc__field-btns legend {
+  grid-column: 1 / -1;
+}
+
+.calc__field-btns label {
+  text-indent: -99999px;
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+.calc-results {
+  background-color: var(--color-brand);
+  color: var(--color-lightest);
+  border-radius: var(--border-radius-lrg);
+  padding: 40px var(--global-padding) var(--global-padding);
+}
+
+@media (min-width: 40em) {
+  .calc-results {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .calc-results > div:last-child {
+    margin-top: auto;
+  }
+}
+
+.calc-results__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: calc(var(--global-padding) / 2);
+}
+
+.calc-results__info h3 {
+  font-size: var(--text-size);
+}
+
+.calc-results__info h4 {
+  font-size: var(--input-text-size);
+  color: var(--color-success);
+}
+
+@media (min-width: 40em) {
+  .calc-results__info h4 {
+    font-size: calc(var(--input-text-size) * 2);
+  }
+}
+
+.calc__field--currency {
+  padding-left: 48px;
+  background-image: url(../img/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-size: auto 18px;
+  background-position: left 20px center;
+}
+
+.calc__field--people {
+  padding-left: 48px;
+  background-image: url(../img/icon-person.svg);
+  background-repeat: no-repeat;
+  background-size: auto 18px;
+  background-position: left 20px center;
+}
+
+.calc-results__reset label {
+  display: block;
+  height: 0px;
+  width: 0px;
+  text-indent: -99999px;
+}
+
+.calc-results__reset input {
+  text-transform: uppercase;
+  font-size: var(--input-text-size);
+  background-color: var(--dark-gray-cyan--alt);
+  color: var(--color-brand);
+}
+
+.calc-results__reset input:hover {
+  cursor: not-allowed;
+}
+
+.calc-results__reset input[data-active="active"] {
+  background-color: var(--color-success);
+  color: var(--color-brand);
+}
+
+.calc-results__reset input[data-active="active"]:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */
