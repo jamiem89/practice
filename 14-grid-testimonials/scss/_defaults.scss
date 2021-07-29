@@ -113,9 +113,14 @@ body {
 
 .card-one {
     background-color: #733FC8;
+    background-image: url(../img/bg-pattern-quotation.svg);
+    background-position: right 20px top;
     color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: auto;
     @include breakpoint-up(medium) {
         grid-area: cardone;
+        background-position: right 60px top;
     }
 }
 
