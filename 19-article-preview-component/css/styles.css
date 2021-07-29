@@ -77,8 +77,15 @@ img {
 
 .article__img {
   height: 200px;
+  display: block;
   border-radius: 8px 8px 0 0;
   overflow: hidden;
+}
+
+@media (min-width: 30em) {
+  .article__img {
+    height: 260px;
+  }
 }
 
 @media (min-width: 40em) {

@@ -70,8 +70,13 @@ img {
 
 .article__img {
     height: 200px;
+    display: block;
     border-radius: 8px 8px 0 0;
     overflow: hidden;
+
+    @include breakpoint-up(small) {
+        height: 260px;
+    }
 
     @include breakpoint-up(medium) {
         height: 100%;
