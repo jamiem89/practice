@@ -70,12 +70,14 @@ img {
 
 .article__img {
     height: 200px;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
 
     @include breakpoint-up(medium) {
         height: 100%;
         grid-area: picture;
         border-radius: 8px 0 0 8px;
-        overflow: hidden;
+
 
         img {
             width: 100%;

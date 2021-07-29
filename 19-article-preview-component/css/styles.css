@@ -77,6 +77,8 @@ img {
 
 .article__img {
   height: 200px;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
 }
 
 @media (min-width: 40em) {
@@ -84,7 +86,6 @@ img {
     height: 100%;
     grid-area: picture;
     border-radius: 8px 0 0 8px;
-    overflow: hidden;
   }
   .article__img img {
     width: 100%;
